@@ -53,15 +53,10 @@ for product_id in product_ids:
         # Drop any duplicate rows just in case.
         forecast_df = forecast_df.drop_duplicates(subset=["forecast_date", "product_id"])
         
-        # Delete any existing forecasts for this product in the database.
-        with engine.connect() as conn:
-            conn.execute(
-                text("DELETE FROM product_forecasts WHERE product_id = :product_id"),
-                {"product_id": int(product_id)}  # Ensure conversion to plain int
-            )
-        
         # Insert the new forecast data into the database.
         forecast_df.to_sql("product_forecasts", engine, if_exists="append", index=False)
+
+            
         print(f"✅ Forecast stored for product {product_id}")
     
     except Exception as e:
