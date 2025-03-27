@@ -4,5 +4,6 @@ pandas
 sqlalchemy
 psycopg2-binary
 nixtla
+altair
 python-dotenv  # Optional: load environment variables
 streamlit     # Optional: if you build a Streamlit app
