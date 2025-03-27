@@ -9,14 +9,38 @@ import altair as alt
 # In production on Railway, use the public URL provided by Railway.
 BASE_URL = st.secrets.get("BASE_URL", "https://demand-forecasting-agent-production.up.railway.app")
 
-# Title and description
-st.title("Forecast Dashboard")
-st.markdown("This dashboard shows the forecasted demand for various products. Use the sidebar to adjust parameters.")
+# 2. Create a dictionary of product_id -> product_name
+id_to_name = {
+    1001: "Organic Bananas",
+    1002: "Gala Apples",
+    1003: "Avocados",
+    1004: "Strawberries",
+    1005: "Tomatoes",
+    1006: "Chicken Breast",
+    1007: "Ground Beef",
+    1008: "Salmon Fillet",
+    1009: "Eggs (Organic)",
+    1010: "Whole Milk",
+    1011: "Yogurt (Greek)",
+    1012: "Cheddar Cheese",
+    1013: "Spinach",
+    1014: "Broccoli",
+    1015: "Mushrooms"
+}
 
-# Sidebar for inputs
-st.sidebar.header("Input Parameters")
-product_id = st.sidebar.number_input("Enter Product ID", min_value=1000, step=1, value=1001)
-days_ahead = st.sidebar.slider("Forecast Days Ahead", min_value=1, max_value=30, value=7)
+#  Reverse the mapping to get name -> product_id
+name_to_id = {v: k for k, v in id_to_name.items()}
+
+#  Streamlit App Layout
+st.title("Demand Forecast Dashboard")
+st.markdown("""
+Use the dropdown to select a product. Adjust the forecast horizon.
+Then click **"Get Forecast"** to retrieve the predicted demand (units).
+""")
+
+# Sidebar or main area for user inputs
+selected_product_name = st.selectbox("Select a Product", list(name_to_id.keys()))
+days_ahead = st.slider("Forecast Days Ahead", min_value=1, max_value=30, value=7)
 
 # Fetch Forecast Data
 def fetch_forecast(api_url):
