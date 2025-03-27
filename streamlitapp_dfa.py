@@ -49,6 +49,7 @@ def fetch_forecast(api_url):
     return response.json()
 
 if st.sidebar.button("Get Forecast"):
+    product_id = name_to_id[selected_product_name]
     api_url = f"{BASE_URL}/forecast/{product_id}?days_ahead={days_ahead}"
     with st.spinner("Fetching forecast data..."):
         try:
