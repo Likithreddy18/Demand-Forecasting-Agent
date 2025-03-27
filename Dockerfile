@@ -16,6 +16,8 @@ RUN pip install --upgrade pip && pip install -r Requirements.txt
 # This command copies all files from your project into the container.
 COPY . /app
 
+# Give execute permission to your script
+RUN chmod +x /app/entrypoint.sh
 # 5. Expose the Port:
 # FastAPI will run on port 8000, so expose that port.
 EXPOSE 8000
