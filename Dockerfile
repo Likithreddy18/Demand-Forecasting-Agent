@@ -8,7 +8,7 @@ WORKDIR /app
 
 # 3. Copy and Install Dependencies:
 # First, copy your requirements file into the container.
-COPY requirements.txt /app/
+COPY Requirements.txt /app/
 # Upgrade pip and install all required packages.
 RUN pip install --upgrade pip && pip install -r requirements.txt
 
