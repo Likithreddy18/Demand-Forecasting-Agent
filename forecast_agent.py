@@ -7,7 +7,7 @@ from nixtla import NixtlaClient
 import config  # Contains your TIMEGPT_API_KEY and optionally other config values
 
 # Set up your database connection using SQLAlchemy's URL.create for safety.
-'''engine = create_engine(
+engine = create_engine(
     URL.create(
         drivername="postgresql+psycopg2",
         username="USERNAME",
@@ -16,9 +16,9 @@ import config  # Contains your TIMEGPT_API_KEY and optionally other config value
         port=5432,
         database="YOUR LOCAL DATABASE"
     )
-)''' #this code is for when you setup
+) #this code is for when you setup
 
-engine = create_engine(config.DATABASE_URL) #This is for railway
+#engine = create_engine(config.DATABASE_URL) #This is for railway
 
 # Initialize the Nixtla (TimeGPT) client with your API key.
 client = NixtlaClient(api_key=config.TIMEGPT_API_KEY)
