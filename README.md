@@ -152,7 +152,7 @@ If you included an entrypoint script that runs `forecast_agent.py` and `remove_d
 
 ## Contributing
 
-Contributions are welcome! Feel free to open issues or submit pull requests for improvements, bug fixes, or new features.
+Contributions are welcome! Please open issues or submit pull requests for improvements, bug fixes, or new features.
 
 ## License
 
@@ -160,7 +160,7 @@ Contributions are welcome! Feel free to open issues or submit pull requests for 
 
 ## Contact
 
-For questions or feedback, reach out via [Your Email or GitHub Issues](https://github.com/your-username/your-repo-name/issues).
+For questions or feedback, reach out via [email](chlikith@utexas.edu).
 
 ---
 
