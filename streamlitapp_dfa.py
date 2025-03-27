@@ -1,6 +1,8 @@
 import streamlit as st
 import requests
 import pandas as pd
+import altair as alt
+
 
 # Set the base URL for your FastAPI service.
 # If you're running locally, it might be "http://localhost:8000"
