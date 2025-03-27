@@ -22,4 +22,4 @@ EXPOSE 8000
 
 # 6. Command to Run Your Application:
 # This starts the FastAPI server using Uvicorn.
-CMD ["uvicorn", "forecast_api:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["./entrypoint.sh"]
