@@ -8,7 +8,7 @@ import config
 app = FastAPI()
 
 # Set up your database connection using SQLAlchemy's URL.create for safety.
-'''engine = create_engine(
+engine = create_engine(
     URL.create(
         drivername="postgresql+psycopg2",
         username="USERNAME",
@@ -17,9 +17,9 @@ app = FastAPI()
         port=5432,
         database="DATABASE"
     )
-)''' #this code is for when you setup
+) #this code is for when you setup
 
-engine = create_engine(config.DATABASE_URL) #This is for railway
+#engine = create_engine(config.DATABASE_URL) #This is for railway
 
 @app.get("/forecast/{product_id}")
 def get_forecast(product_id: int, days_ahead: int = 7):
