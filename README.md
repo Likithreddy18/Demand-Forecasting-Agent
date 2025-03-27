@@ -117,11 +117,11 @@ Open [http://localhost:8501](http://localhost:8501) to interact with the dashboa
 ## Deployed Webapp
 
 A live version of the **Streamlit dashboard** is available at:
-> **[Streamlit Webapp URL](https://your-streamlit-app-link.streamlit.app/)**
+> **[Streamlit Webapp](https://demand-forecasting-agent-3vzhhixwbk6awoykbuet72.streamlit.app/)**
 
 You can enter a product ID and forecast horizon to visualize predictions. The dashboard communicates with the FastAPI service to fetch forecast data.
 
-## Docker (Optional)
+## Docker 
 
 ### Build the Docker Image
 
