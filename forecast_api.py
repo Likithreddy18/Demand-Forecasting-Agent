@@ -3,6 +3,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.engine import URL
 import pandas as pd
 import traceback
+import config
 
 app = FastAPI()
 
